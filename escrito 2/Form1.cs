@@ -16,22 +16,28 @@ namespace escrito_2
         public Form1()
         {
             InitializeComponent();
+            
         }
 
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             if (!textBox1.Text.Equals("") && !textBox2.Text.Equals(""))
             {
-                    PersonaControladores.alta(textBox1.Text, textBox2.Text);
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    MessageBox.Show("Se ah ingresado correctamente");
-                }
+                PersonaControladores.alta(textBox1.Text, textBox2.Text);
+                textBox1.Text = "";
+                textBox2.Text = "";
+                MessageBox.Show("Se ah ingresado correctamente");
+            }
             else
             {
                 MessageBox.Show("Complete los campos");
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.DataSource = PersonaControladores.Listar();
+        }
+    }
 }

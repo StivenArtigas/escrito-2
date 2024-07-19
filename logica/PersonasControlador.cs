@@ -25,6 +25,25 @@ namespace logica
             persona.Borrar();
         }
 
+        public static DataTable Listar()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Id", typeof(int));
+            tabla.Columns.Add("Nombre", typeof(string));
+            tabla.Columns.Add("Apellido", typeof(string));
 
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerTodos())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["Id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
     }
 }
