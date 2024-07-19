@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace persistencia
 {
-    public abstract class conexion_base_de_datos
+    public abstract class Modelo
     {
         public string IP;
         public string NombreBase;

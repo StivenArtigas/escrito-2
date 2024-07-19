@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace persistencia
 {
-    public class base_de_datos
+    public class PersonasModelos : Modelo
     {
         public int Id;
         public string Nombre;
@@ -27,9 +27,9 @@ namespace persistencia
             this.Comando.ExecuteNonQuery();
         }
 
-        public List<base_de_datos> ObtenerTodos()
+        public List<PersonasModelos> ObtenerTodos()
         {
-            List<base_de_datos> bd = new List<base_de_datos>();
+            List<PersonasModelos> bd = new List<PersonasModelos>();
 
             string sql = $"SELECT * FROM personas WHERE eliminado = false";
             this.Comando.CommandText = sql;
@@ -37,11 +37,11 @@ namespace persistencia
 
             while (this.Lector.Read())
             {
-                base_de_datos bd = new base_de_datos();
-                bd.Id = Int32.Parse(this.Lector["Id"].ToString());
-                bd.Nombre = this.Lector["Nombre"].ToString();
-                bd.Precio = this.Lector["Apellido"].ToString());
-                bd.Add(pizza);
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["Id"].ToString());
+                pm.Nombre = this.Lector["Nombre"].ToString();
+                pm.Apellido = this.Lector["Apellido"].ToString();
+                bd.Add(pm);
             }
             return bd;
 
