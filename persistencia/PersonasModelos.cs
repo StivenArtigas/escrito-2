@@ -36,7 +36,7 @@ namespace persistencia
         }
         public void ModificarApellido()
         {
-            string sql = $"UPDATE personas SET nombre = '{this.Apellido}' WHERE id ='{this.Id}'";
+            string sql = $"UPDATE personas SET apellido = '{this.Apellido}' WHERE id ='{this.Id}'";
             this.Comando.CommandText = sql;
             this.Comando.ExecuteNonQuery();
         }

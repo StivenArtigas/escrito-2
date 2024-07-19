@@ -43,7 +43,7 @@ namespace escrito_2
             this.BtnModificar = new System.Windows.Forms.Button();
             this.textIdModificar = new System.Windows.Forms.TextBox();
             this.textNombreModificar = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textApellidoModificar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -153,12 +153,12 @@ namespace escrito_2
             this.textNombreModificar.Size = new System.Drawing.Size(100, 20);
             this.textNombreModificar.TabIndex = 15;
             // 
-            // textBox6
+            // textApellidoModificar
             // 
-            this.textBox6.Location = new System.Drawing.Point(896, 164);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 16;
+            this.textApellidoModificar.Location = new System.Drawing.Point(896, 164);
+            this.textApellidoModificar.Name = "textApellidoModificar";
+            this.textApellidoModificar.Size = new System.Drawing.Size(100, 20);
+            this.textApellidoModificar.TabIndex = 16;
             // 
             // label6
             // 
@@ -248,7 +248,7 @@ namespace escrito_2
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textApellidoModificar);
             this.Controls.Add(this.textNombreModificar);
             this.Controls.Add(this.textIdModificar);
             this.Controls.Add(this.BtnModificar);
@@ -288,7 +288,7 @@ namespace escrito_2
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.TextBox textIdModificar;
         private System.Windows.Forms.TextBox textNombreModificar;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textApellidoModificar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

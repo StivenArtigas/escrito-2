@@ -31,7 +31,13 @@ namespace logica
             persona.Nombre = nombre;
             persona.ModificarNombre();
         }
-
+        public static void ModificarApellido(string id, string apellido)
+        {
+            PersonasModelos persona = new PersonasModelos();
+            persona.Id = Int32.Parse(id);
+            persona.Apellido = apellido;
+            persona.ModificarApellido();
+        }
         public static DataTable Listar()
         {
             DataTable tabla = new DataTable();
