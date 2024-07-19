@@ -28,7 +28,10 @@ namespace escrito_2
                     textBox2.Text = "";
                     MessageBox.Show("Se ah ingresado correctamente");
                 }
-            
+            else
+            {
+                MessageBox.Show("Complete los campos");
+            }
         }
-    }
+
 }

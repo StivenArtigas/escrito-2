@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace escrito_2
 {
     partial class Form1
@@ -29,10 +31,13 @@ namespace escrito_2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -69,6 +74,10 @@ namespace escrito_2
             this.label1.Text = "Alta";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // personaControladoresBindingSource
+            // 
+            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,9 +89,15 @@ namespace escrito_2
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -91,6 +106,7 @@ namespace escrito_2
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource personaControladoresBindingSource;
     }
 }
 

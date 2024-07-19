@@ -18,6 +18,13 @@ namespace logica
 
             persona.Guardar();
         }
+        public static void Borrar(string id)
+        {
+            PersonasModelos persona = new PersonasModelos();
+            persona.Id = Int32.Parse(id);
+            persona.Borrar();
+        }
+
 
     }
 }
