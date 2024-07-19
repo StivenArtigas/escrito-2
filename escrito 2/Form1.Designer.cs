@@ -34,21 +34,26 @@ namespace escrito_2
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnAlta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.BtnBaja = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
+            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -65,15 +70,15 @@ namespace escrito_2
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // button1
+            // BtnAlta
             // 
-            this.button1.Location = new System.Drawing.Point(176, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "ALTA";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnAlta.Location = new System.Drawing.Point(176, 164);
+            this.BtnAlta.Name = "BtnAlta";
+            this.BtnAlta.Size = new System.Drawing.Size(75, 23);
+            this.BtnAlta.TabIndex = 2;
+            this.BtnAlta.Text = "ALTA";
+            this.BtnAlta.UseVisualStyleBackColor = true;
+            this.BtnAlta.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -85,34 +90,15 @@ namespace escrito_2
             this.label1.Text = "Alta";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // personaControladoresBindingSource
+            // BtnBaja
             // 
-            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(441, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(466, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "BAJA";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(438, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Baja";
+            this.BtnBaja.Location = new System.Drawing.Point(466, 306);
+            this.BtnBaja.Name = "BtnBaja";
+            this.BtnBaja.Size = new System.Drawing.Size(75, 23);
+            this.BtnBaja.TabIndex = 5;
+            this.BtnBaja.Text = "BAJA";
+            this.BtnBaja.UseVisualStyleBackColor = true;
+            this.BtnBaja.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -121,7 +107,7 @@ namespace escrito_2
             this.ID,
             this.Nombre,
             this.Apellido});
-            this.dataGridView1.Location = new System.Drawing.Point(151, 333);
+            this.dataGridView1.Location = new System.Drawing.Point(104, 250);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 294);
             this.dataGridView1.TabIndex = 7;
@@ -145,15 +131,6 @@ namespace escrito_2
             this.Apellido.Name = "Apellido";
             this.Apellido.Width = 125;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(417, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "ID";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -172,26 +149,102 @@ namespace escrito_2
             this.label5.TabIndex = 12;
             this.label5.Text = "Apellido";
             // 
+            // personaControladoresBindingSource
+            // 
+            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.Location = new System.Drawing.Point(862, 200);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(75, 23);
+            this.BtnModificar.TabIndex = 13;
+            this.BtnModificar.Text = "MODIFICAR";
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(837, 93);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 14;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(837, 128);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 15;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(837, 164);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(834, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Baja";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(803, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(787, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Nombre";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(787, 169);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Apellido";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 716);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.BtnBaja);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnAlta);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,19 +259,24 @@ namespace escrito_2
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAlta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource personaControladoresBindingSource;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnBaja;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -20,7 +20,7 @@ namespace persistencia
 
         public Modelo()
         {
-            this.IP = "170.0.0.1";
+            this.IP = "127.0.0.1";
             this.NombreBase = "escrito2";
             this.Password = "Ss11331313$";
             this.NombreDeUsuario = "root";
