@@ -43,7 +43,6 @@ namespace escrito_2
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnModificar = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -52,6 +51,9 @@ namespace escrito_2
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textborrar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +94,7 @@ namespace escrito_2
             // 
             // BtnBaja
             // 
-            this.BtnBaja.Location = new System.Drawing.Point(466, 306);
+            this.BtnBaja.Location = new System.Drawing.Point(557, 131);
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(75, 23);
             this.BtnBaja.TabIndex = 5;
@@ -148,10 +150,6 @@ namespace escrito_2
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Apellido";
-            // 
-            // personaControladoresBindingSource
-            // 
-            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
             // 
             // BtnModificar
             // 
@@ -220,11 +218,34 @@ namespace escrito_2
             this.label9.TabIndex = 20;
             this.label9.Text = "Apellido";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(326, 550);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 39);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "MOSTRAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // personaControladoresBindingSource
+            // 
+            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
+            // 
+            // textborrar
+            // 
+            this.textborrar.Location = new System.Drawing.Point(532, 93);
+            this.textborrar.Name = "textborrar";
+            this.textborrar.Size = new System.Drawing.Size(100, 20);
+            this.textborrar.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 716);
+            this.Controls.Add(this.textborrar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -277,6 +298,8 @@ namespace escrito_2
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textborrar;
     }
 }
 

@@ -46,7 +46,8 @@ namespace escrito_2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
+            string id;
+            id=textborrar.Text;
             DialogResult resultado = MessageBox.Show(
                 $"Esta seguro que quiere eliminar la pizza {id}?",
                 "Esta seguro?",
@@ -61,6 +62,12 @@ namespace escrito_2
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridView1.DataSource = PersonaControladores.Listar();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = PersonaControladores.Listar();
         }
     }
 }

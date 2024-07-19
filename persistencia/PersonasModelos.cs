@@ -11,10 +11,11 @@ namespace persistencia
         public int Id;
         public string Nombre;
         public string Apellido;
+        public int Eliminado = 0;
 
         public void Guardar()
         {
-            string sql = $"INSERT INTO personas (nombre, apellido) VALUES('{this.Nombre}',{this.Apellido})";
+            string sql = $"INSERT INTO personas (nombre, apellido,eliminado) VALUES('{this.Nombre}','{this.Apellido}','{this.Eliminado}')";
             this.Comando.CommandText = sql;
             this.Comando.ExecuteNonQuery();
 
@@ -31,16 +32,16 @@ namespace persistencia
         {
             List<PersonasModelos> bd = new List<PersonasModelos>();
 
-            string sql = $"SELECT * FROM personas WHERE eliminado = false";
+            string sql = $"SELECT * FROM personas WHERE eliminado = 0";
             this.Comando.CommandText = sql;
             this.Lector = this.Comando.ExecuteReader();
 
             while (this.Lector.Read())
             {
                 PersonasModelos pm = new PersonasModelos();
-                pm.Id = Int32.Parse(this.Lector["Id"].ToString());
-                pm.Nombre = this.Lector["Nombre"].ToString();
-                pm.Apellido = this.Lector["Apellido"].ToString();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
                 bd.Add(pm);
             }
             return bd;
