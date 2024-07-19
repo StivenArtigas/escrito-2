@@ -38,22 +38,21 @@ namespace escrito_2
             this.label1 = new System.Windows.Forms.Label();
             this.BtnBaja = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnModificar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textIdModificar = new System.Windows.Forms.TextBox();
+            this.textNombreModificar = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textborrar = new System.Windows.Forms.TextBox();
+            this.personaControladoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -105,33 +104,12 @@ namespace escrito_2
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.Apellido});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(104, 250);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 294);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Id";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 125;
             // 
             // label3
             // 
@@ -153,7 +131,7 @@ namespace escrito_2
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(862, 200);
+            this.BtnModificar.Location = new System.Drawing.Point(921, 200);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(75, 23);
             this.BtnModificar.TabIndex = 13;
@@ -161,23 +139,23 @@ namespace escrito_2
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox4
+            // textIdModificar
             // 
-            this.textBox4.Location = new System.Drawing.Point(837, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 14;
+            this.textIdModificar.Location = new System.Drawing.Point(896, 93);
+            this.textIdModificar.Name = "textIdModificar";
+            this.textIdModificar.Size = new System.Drawing.Size(100, 20);
+            this.textIdModificar.TabIndex = 14;
             // 
-            // textBox5
+            // textNombreModificar
             // 
-            this.textBox5.Location = new System.Drawing.Point(837, 128);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
+            this.textNombreModificar.Location = new System.Drawing.Point(896, 128);
+            this.textNombreModificar.Name = "textNombreModificar";
+            this.textNombreModificar.Size = new System.Drawing.Size(100, 20);
+            this.textNombreModificar.TabIndex = 15;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(837, 164);
+            this.textBox6.Location = new System.Drawing.Point(896, 164);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 16;
@@ -185,16 +163,16 @@ namespace escrito_2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(834, 58);
+            this.label6.Location = new System.Drawing.Point(893, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Baja";
+            this.label6.Text = "Modificacion";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(803, 93);
+            this.label7.Location = new System.Drawing.Point(862, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 13);
             this.label7.TabIndex = 18;
@@ -203,7 +181,7 @@ namespace escrito_2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(787, 131);
+            this.label8.Location = new System.Drawing.Point(846, 131);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 19;
@@ -212,7 +190,7 @@ namespace escrito_2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(787, 169);
+            this.label9.Location = new System.Drawing.Point(846, 169);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 20;
@@ -228,10 +206,6 @@ namespace escrito_2
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // personaControladoresBindingSource
-            // 
-            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
-            // 
             // textborrar
             // 
             this.textborrar.Location = new System.Drawing.Point(532, 93);
@@ -239,11 +213,35 @@ namespace escrito_2
             this.textborrar.Size = new System.Drawing.Size(100, 20);
             this.textborrar.TabIndex = 22;
             // 
+            // personaControladoresBindingSource
+            // 
+            this.personaControladoresBindingSource.DataSource = typeof(logica.PersonaControladores);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(467, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Ingresar ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(529, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Baja";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 716);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textborrar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
@@ -251,8 +249,8 @@ namespace escrito_2
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textNombreModificar);
+            this.Controls.Add(this.textIdModificar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -285,14 +283,11 @@ namespace escrito_2
         private System.Windows.Forms.BindingSource personaControladoresBindingSource;
         private System.Windows.Forms.Button BtnBaja;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textIdModificar;
+        private System.Windows.Forms.TextBox textNombreModificar;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -300,6 +295,8 @@ namespace escrito_2
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textborrar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -24,13 +24,20 @@ namespace logica
             persona.Id = Int32.Parse(id);
             persona.Borrar();
         }
+        public static void ModificarNombre(string id, string nombre)
+        {
+            PersonasModelos persona = new PersonasModelos();
+            persona.Id = Int32.Parse(id);
+            persona.Nombre = nombre;
+            persona.ModificarNombre();
+        }
 
         public static DataTable Listar()
         {
             DataTable tabla = new DataTable();
-            tabla.Columns.Add("id", typeof(int));
-            tabla.Columns.Add("nombre", typeof(string));
-            tabla.Columns.Add("apellido", typeof(string));
+           tabla.Columns.Add("id", typeof(int));
+           tabla.Columns.Add("nombre", typeof(string));
+           tabla.Columns.Add("apellido", typeof(string));
 
 
             PersonasModelos ListarPersonas = new PersonasModelos();

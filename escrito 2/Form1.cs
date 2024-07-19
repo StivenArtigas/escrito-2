@@ -18,10 +18,6 @@ namespace escrito_2
             InitializeComponent();
 
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            dataGridView1.Refresh();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -40,34 +36,47 @@ namespace escrito_2
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            //modificar
+            string id;
+            string nombre;
+            id = textIdModificar.Text;
+            nombre = textNombreModificar.Text;
+            DialogResult resultado = MessageBox.Show(
+                $"Esta seguro que quiere modificar la persona con el id {id}?",
+                "Esta seguro?",
+                MessageBoxButtons.YesNo);
 
-        }  
-
+            if (resultado.ToString() == "Yes")
+            {
+                if (!textNombreModificar.Text.Equals("") && textBox2.Text.Equals(""))
+                {
+                    PersonaControladores.ModificarNombre(id, nombre);
+                    dataGridView1.DataSource = PersonaControladores.Listar();
+                }
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             string id;
             id=textborrar.Text;
             DialogResult resultado = MessageBox.Show(
-                $"Esta seguro que quiere eliminar la pizza {id}?",
+                $"Esta seguro que quiere eliminar a la persona con el id {id}?",
                 "Esta seguro?",
                 MessageBoxButtons.YesNo);
 
             if (resultado.ToString() == "Yes")
             {
                 PersonaControladores.Borrar(id);
-                dataGridView1.Refresh();
+                dataGridView1.DataSource = PersonaControladores.Listar();
                 MessageBox.Show("Persona eliminada");
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView1.DataSource = PersonaControladores.Listar();
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = PersonaControladores.Listar();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
     }
 }

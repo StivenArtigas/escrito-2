@@ -28,11 +28,23 @@ namespace persistencia
             this.Comando.ExecuteNonQuery();
         }
 
+        public void ModificarNombre()
+        {
+            string sql = $"UPDATE personas SET nombre = '{this.Nombre}' WHERE id ='{this.Id}'";
+            this.Comando.CommandText = sql;
+            this.Comando.ExecuteNonQuery();
+        }
+        public void ModificarApellido()
+        {
+            string sql = $"UPDATE personas SET nombre = '{this.Apellido}' WHERE id ='{this.Id}'";
+            this.Comando.CommandText = sql;
+            this.Comando.ExecuteNonQuery();
+        }
         public List<PersonasModelos> ObtenerTodos()
         {
             List<PersonasModelos> bd = new List<PersonasModelos>();
 
-            string sql = $"SELECT * FROM personas WHERE eliminado = 0";
+            string sql = $"SELECT * FROM personas WHERE eliminado = false";
             this.Comando.CommandText = sql;
             this.Lector = this.Comando.ExecuteReader();
 
