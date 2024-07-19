@@ -58,5 +58,25 @@ namespace logica
 
             return tabla;
         }
+        public static DataTable ListarBloqueados()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("id", typeof(int));
+            tabla.Columns.Add("nombre", typeof(string));
+            tabla.Columns.Add("apellido", typeof(string));
+
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerBloqueados())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
     }
 }

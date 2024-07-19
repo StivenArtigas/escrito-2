@@ -59,5 +59,24 @@ namespace persistencia
             return bd;
 
         }
+        public List<PersonasModelos> ObtenerBloqueados()
+        {
+            List<PersonasModelos> bd = new List<PersonasModelos>();
+
+            string sql = $"SELECT * FROM personas WHERE eliminado = true";
+            this.Comando.CommandText = sql;
+            this.Lector = this.Comando.ExecuteReader();
+
+            while (this.Lector.Read())
+            {
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
+                bd.Add(pm);
+            }
+            return bd;
+
+        }
     }
 }

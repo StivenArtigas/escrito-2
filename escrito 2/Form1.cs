@@ -26,7 +26,7 @@ namespace escrito_2
                 PersonaControladores.alta(textBox1.Text, textBox2.Text);
                 textBox1.Text = "";
                 textBox2.Text = "";
-                MessageBox.Show("Se ah ingresado correctamente");
+                MessageBox.Show("Se ha ingresado correctamente");
                 dataGridView1.DataSource = PersonaControladores.Listar();
             }
             else
@@ -91,5 +91,9 @@ namespace escrito_2
         {
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = PersonaControladores.ListarBloqueados();
+        }
     }
 }
