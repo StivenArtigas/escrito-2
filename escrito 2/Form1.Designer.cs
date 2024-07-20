@@ -327,7 +327,7 @@ namespace escrito_2
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(921, 441);
+            this.button3.Location = new System.Drawing.Point(921, 440);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 26;

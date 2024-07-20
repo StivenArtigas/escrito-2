@@ -83,8 +83,7 @@ namespace logica
         
         public static DataTable BuscarID(String id)
         {
-            PersonasModelos persona = new PersonasModelos();
-            persona.Id = Int32.Parse(id);
+            
             DataTable tabla = new DataTable();
             tabla.Columns.Add("id", typeof(int));
             tabla.Columns.Add("nombre", typeof(string));
@@ -92,6 +91,7 @@ namespace logica
 
 
             PersonasModelos ListarPersonas = new PersonasModelos();
+            ListarPersonas.Id = Int32.Parse(id);
             foreach (PersonasModelos p in ListarPersonas.ObtenerPorId())
             {
                 DataRow fila = tabla.NewRow();
@@ -106,14 +106,13 @@ namespace logica
         public static DataTable BuscarNombre(string nombre)
         {
             DataTable tabla = new DataTable();
-            PersonasModelos persona = new PersonasModelos();
-            persona.Nombre = nombre;
             tabla.Columns.Add("id", typeof(int));
             tabla.Columns.Add("nombre", typeof(string));
             tabla.Columns.Add("apellido", typeof(string));
 
 
             PersonasModelos ListarPersonas = new PersonasModelos();
+            ListarPersonas.Nombre = nombre;
             foreach (PersonasModelos p in ListarPersonas.ObtenerPorNombre())
             {
                 DataRow fila = tabla.NewRow();
@@ -128,14 +127,13 @@ namespace logica
         public static DataTable BuscarApellido(string apellido)
         {
             DataTable tabla = new DataTable();
-            PersonasModelos persona = new PersonasModelos();
-            persona.Apellido = apellido;
             tabla.Columns.Add("id", typeof(int));
             tabla.Columns.Add("nombre", typeof(string));
             tabla.Columns.Add("apellido", typeof(string));
 
 
             PersonasModelos ListarPersonas = new PersonasModelos();
+            ListarPersonas.Apellido = apellido;
             foreach (PersonasModelos p in ListarPersonas.ObtenerPorApellido())
             {
                 DataRow fila = tabla.NewRow();

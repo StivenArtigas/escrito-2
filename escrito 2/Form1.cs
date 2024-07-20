@@ -36,34 +36,34 @@ namespace escrito_2
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            string id;
-            string nombre;
-            string apellido;
-            id = textIdModificar.Text;
-            nombre = textNombreModificar.Text;
-            apellido = textApellidoModificar.Text;
+            if (textIdModificar.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese un id a modificar");
+            }
+            else { 
             DialogResult resultado = MessageBox.Show(
-                $"Esta seguro que quiere modificar la persona con el id {id}?",
+                $"Esta seguro que quiere modificar la persona con el id {textIdModificar.Text}?",
                 "Esta seguro?",
                 MessageBoxButtons.YesNo);
 
-            if (resultado.ToString() == "Yes")
-            {
-                if (!textNombreModificar.Text.Equals("") && textApellidoModificar.Text.Equals(""))
+                if (resultado.ToString() == "Yes")
                 {
-                    PersonaControladores.ModificarNombre(id, nombre);
-                    dataGridView1.DataSource = PersonaControladores.Listar();
-                }
-                if (textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
-                {
-                    PersonaControladores.ModificarApellido(id, apellido);
-                    dataGridView1.DataSource = PersonaControladores.Listar();
-                }
-                if (!textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
-                {
-                    PersonaControladores.ModificarNombre(id, nombre);
-                    PersonaControladores.ModificarApellido(id, apellido);
-                    dataGridView1.DataSource = PersonaControladores.Listar();
+                    if (!textNombreModificar.Text.Equals("") && textApellidoModificar.Text.Equals(""))
+                    {
+                        PersonaControladores.ModificarNombre(textIdModificar.Text, textNombreModificar.Text);
+                        dataGridView1.DataSource = PersonaControladores.Listar();
+                    }
+                    if (textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
+                    {
+                        PersonaControladores.ModificarApellido(textIdModificar.Text, textApellidoModificar.Text);
+                        dataGridView1.DataSource = PersonaControladores.Listar();
+                    }
+                    if (!textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
+                    {
+                        PersonaControladores.ModificarNombre(textIdModificar.Text, textNombreModificar.Text);
+                        PersonaControladores.ModificarApellido(textIdModificar.Text, textApellidoModificar.Text);
+                        dataGridView1.DataSource = PersonaControladores.Listar();
+                    }
                 }
             }
         }
@@ -104,25 +104,27 @@ namespace escrito_2
         private void button3_Click_1(object sender, EventArgs e)
         {
 
-            string id;
-            string nombre;
-            string apellido;
-            id = textIdBuscar.Text;
-            nombre = textNombreBuscar.Text;
-            apellido = textApellidoBuscar.Text;
+            
             if (!textIdBuscar.Text.Equals(""))
             {
-                dataGridView1.DataSource = PersonaControladores.BuscarID(id);
+                dataGridView1.DataSource = PersonaControladores.BuscarID(textIdBuscar.Text);
             }
             if (!textNombreBuscar.Text.Equals(""))
             {
-                dataGridView1.DataSource = PersonaControladores.BuscarNombre(nombre);
+                dataGridView1.DataSource = PersonaControladores.BuscarNombre(textNombreBuscar.Text);
             }
             if (!textApellidoBuscar.Text.Equals(""))
             {
-                dataGridView1.DataSource = PersonaControladores.BuscarApellido(apellido);
+                dataGridView1.DataSource = PersonaControladores.BuscarApellido(textApellidoBuscar.Text);
             }
-          
+            else
+            {
+                MessageBox.Show("Ingrese una opcion");
+            }
+                
+            textApellidoBuscar.Text=("");
+            textNombreBuscar.Text = ("");
+            textIdBuscar.Text = ("");         
         }
     }
 }
