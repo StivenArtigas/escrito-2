@@ -103,21 +103,22 @@ namespace escrito_2
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+
             string id;
             string nombre;
             string apellido;
             id = textIdBuscar.Text;
             nombre = textNombreBuscar.Text;
             apellido = textApellidoBuscar.Text;
-            if (!textIdBuscar.Text.Equals("") && textNombreBuscar.Text.Equals("") && textApellidoBuscar.Text.Equals(""))
+            if (!textIdBuscar.Text.Equals(""))
             {
                 dataGridView1.DataSource = PersonaControladores.BuscarID(id);
             }
-            if (textIdBuscar.Text.Equals("") && !textNombreBuscar.Text.Equals("") && textApellidoBuscar.Text.Equals(""))
+            if (!textNombreBuscar.Text.Equals(""))
             {
                 dataGridView1.DataSource = PersonaControladores.BuscarNombre(nombre);
             }
-            if (textIdBuscar.Text.Equals("") && textNombreBuscar.Text.Equals("") && !textApellidoBuscar.Text.Equals(""))
+            if (!textApellidoBuscar.Text.Equals(""))
             {
                 dataGridView1.DataSource = PersonaControladores.BuscarApellido(apellido);
             }
