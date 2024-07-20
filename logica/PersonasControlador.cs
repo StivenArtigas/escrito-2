@@ -10,7 +10,7 @@ namespace logica
 {
     public class PersonaControladores
     {
-        public static void alta(string nombre, string apellido)
+        public static void Alta(string nombre, string apellido)
         {
             PersonasModelos persona = new PersonasModelos();
             persona.Nombre = nombre;
@@ -68,6 +68,75 @@ namespace logica
 
             PersonasModelos ListarPersonas = new PersonasModelos();
             foreach (PersonasModelos p in ListarPersonas.ObtenerBloqueados())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
+        
+        
+        
+        public static DataTable BuscarID(String id)
+        {
+            PersonasModelos persona = new PersonasModelos();
+            persona.Id = Int32.Parse(id);
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("id", typeof(int));
+            tabla.Columns.Add("nombre", typeof(string));
+            tabla.Columns.Add("apellido", typeof(string));
+
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerPorId())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
+        public static DataTable BuscarNombre(string nombre)
+        {
+            DataTable tabla = new DataTable();
+            PersonasModelos persona = new PersonasModelos();
+            persona.Nombre = nombre;
+            tabla.Columns.Add("id", typeof(int));
+            tabla.Columns.Add("nombre", typeof(string));
+            tabla.Columns.Add("apellido", typeof(string));
+
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerPorNombre())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
+        public static DataTable BuscarApellido(string apellido)
+        {
+            DataTable tabla = new DataTable();
+            PersonasModelos persona = new PersonasModelos();
+            persona.Apellido = apellido;
+            tabla.Columns.Add("id", typeof(int));
+            tabla.Columns.Add("nombre", typeof(string));
+            tabla.Columns.Add("apellido", typeof(string));
+
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerPorApellido())
             {
                 DataRow fila = tabla.NewRow();
                 fila["id"] = p.Id;

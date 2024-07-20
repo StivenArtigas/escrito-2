@@ -78,5 +78,63 @@ namespace persistencia
             return bd;
 
         }
+        public List<PersonasModelos> ObtenerPorId()
+        {
+            List<PersonasModelos> bd = new List<PersonasModelos>();
+
+            string sql = $"SELECT * FROM personas WHERE id = '{this.Id}'";
+            this.Comando.CommandText = sql;
+            this.Lector = this.Comando.ExecuteReader();
+
+            while (this.Lector.Read())
+            {
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
+                bd.Add(pm);
+            }
+            return bd;
+
+        }
+        public List<PersonasModelos> ObtenerPorNombre()
+        {
+            List<PersonasModelos> bd = new List<PersonasModelos>();
+
+            string sql = $"SELECT * FROM personas WHERE nombre = '{this.Nombre}'";
+            this.Comando.CommandText = sql;
+            this.Lector = this.Comando.ExecuteReader();
+
+            while (this.Lector.Read())
+            {
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
+                bd.Add(pm);
+            }
+            return bd;
+
+        }
+        public List<PersonasModelos> ObtenerPorApellido()
+        {
+            List<PersonasModelos> bd = new List<PersonasModelos>();
+
+            string sql = $"SELECT * FROM personas WHERE apellido = '{this.Apellido}'";
+            this.Comando.CommandText = sql;
+            this.Lector = this.Comando.ExecuteReader();
+
+            while (this.Lector.Read())
+            {
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
+                bd.Add(pm);
+            }
+            return bd;
+
+        }
+
     }
 }

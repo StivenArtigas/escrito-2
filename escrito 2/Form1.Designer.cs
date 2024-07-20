@@ -54,6 +54,14 @@ namespace escrito_2
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textApellidoBuscar = new System.Windows.Forms.TextBox();
+            this.textNombreBuscar = new System.Windows.Forms.TextBox();
+            this.textIdBuscar = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaControladoresBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +116,7 @@ namespace escrito_2
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(350, 274);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 260);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 294);
             this.dataGridView1.TabIndex = 7;
@@ -207,7 +215,7 @@ namespace escrito_2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(393, 574);
+            this.button1.Location = new System.Drawing.Point(108, 560);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 39);
             this.button1.TabIndex = 21;
@@ -248,7 +256,7 @@ namespace escrito_2
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(532, 574);
+            this.button2.Location = new System.Drawing.Point(235, 560);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 39);
             this.button2.TabIndex = 25;
@@ -256,12 +264,91 @@ namespace escrito_2
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(791, 405);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 25);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Apellido";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(791, 364);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 25);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Nombre";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(846, 329);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 25);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "ID";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(876, 299);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 25);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Buscar";
+            // 
+            // textApellidoBuscar
+            // 
+            this.textApellidoBuscar.Location = new System.Drawing.Point(896, 405);
+            this.textApellidoBuscar.Name = "textApellidoBuscar";
+            this.textApellidoBuscar.Size = new System.Drawing.Size(100, 20);
+            this.textApellidoBuscar.TabIndex = 29;
+            // 
+            // textNombreBuscar
+            // 
+            this.textNombreBuscar.Location = new System.Drawing.Point(896, 369);
+            this.textNombreBuscar.Name = "textNombreBuscar";
+            this.textNombreBuscar.Size = new System.Drawing.Size(100, 20);
+            this.textNombreBuscar.TabIndex = 28;
+            // 
+            // textIdBuscar
+            // 
+            this.textIdBuscar.Location = new System.Drawing.Point(896, 334);
+            this.textIdBuscar.Name = "textIdBuscar";
+            this.textIdBuscar.Size = new System.Drawing.Size(100, 20);
+            this.textIdBuscar.TabIndex = 27;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(921, 441);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "BUSCAR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1096, 679);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textApellidoBuscar);
+            this.Controls.Add(this.textNombreBuscar);
+            this.Controls.Add(this.textIdBuscar);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -321,6 +408,14 @@ namespace escrito_2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textApellidoBuscar;
+        private System.Windows.Forms.TextBox textNombreBuscar;
+        private System.Windows.Forms.TextBox textIdBuscar;
+        private System.Windows.Forms.Button button3;
     }
 }
 
