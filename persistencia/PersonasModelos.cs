@@ -36,7 +36,7 @@ namespace persistencia
         }
         public void ModificarApellido()
         {
-            string sql = $"UPDATE personas SET nombre = '{this.Apellido}' WHERE id ='{this.Id}'";
+            string sql = $"UPDATE personas SET apellido = '{this.Apellido}' WHERE id ='{this.Id}'";
             this.Comando.CommandText = sql;
             this.Comando.ExecuteNonQuery();
         }
@@ -45,6 +45,25 @@ namespace persistencia
             List<PersonasModelos> bd = new List<PersonasModelos>();
 
             string sql = $"SELECT * FROM personas WHERE eliminado = false";
+            this.Comando.CommandText = sql;
+            this.Lector = this.Comando.ExecuteReader();
+
+            while (this.Lector.Read())
+            {
+                PersonasModelos pm = new PersonasModelos();
+                pm.Id = Int32.Parse(this.Lector["id"].ToString());
+                pm.Nombre = this.Lector["nombre"].ToString();
+                pm.Apellido = this.Lector["apellido"].ToString();
+                bd.Add(pm);
+            }
+            return bd;
+
+        }
+        public List<PersonasModelos> ObtenerBloqueados()
+        {
+            List<PersonasModelos> bd = new List<PersonasModelos>();
+
+            string sql = $"SELECT * FROM personas WHERE eliminado = true";
             this.Comando.CommandText = sql;
             this.Lector = this.Comando.ExecuteReader();
 

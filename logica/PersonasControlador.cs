@@ -31,7 +31,13 @@ namespace logica
             persona.Nombre = nombre;
             persona.ModificarNombre();
         }
-
+        public static void ModificarApellido(string id, string apellido)
+        {
+            PersonasModelos persona = new PersonasModelos();
+            persona.Id = Int32.Parse(id);
+            persona.Apellido = apellido;
+            persona.ModificarApellido();
+        }
         public static DataTable Listar()
         {
             DataTable tabla = new DataTable();
@@ -42,6 +48,26 @@ namespace logica
 
             PersonasModelos ListarPersonas = new PersonasModelos();
             foreach (PersonasModelos p in ListarPersonas.ObtenerTodos())
+            {
+                DataRow fila = tabla.NewRow();
+                fila["id"] = p.Id;
+                fila["Nombre"] = p.Nombre;
+                fila["Apellido"] = p.Apellido;
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
+        public static DataTable ListarBloqueados()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("id", typeof(int));
+            tabla.Columns.Add("nombre", typeof(string));
+            tabla.Columns.Add("apellido", typeof(string));
+
+
+            PersonasModelos ListarPersonas = new PersonasModelos();
+            foreach (PersonasModelos p in ListarPersonas.ObtenerBloqueados())
             {
                 DataRow fila = tabla.NewRow();
                 fila["id"] = p.Id;

@@ -26,7 +26,7 @@ namespace escrito_2
                 PersonaControladores.alta(textBox1.Text, textBox2.Text);
                 textBox1.Text = "";
                 textBox2.Text = "";
-                MessageBox.Show("Se ah ingresado correctamente");
+                MessageBox.Show("Se ha ingresado correctamente");
                 dataGridView1.DataSource = PersonaControladores.Listar();
             }
             else
@@ -38,8 +38,10 @@ namespace escrito_2
         {
             string id;
             string nombre;
+            string apellido;
             id = textIdModificar.Text;
             nombre = textNombreModificar.Text;
+            apellido = textApellidoModificar.Text;
             DialogResult resultado = MessageBox.Show(
                 $"Esta seguro que quiere modificar la persona con el id {id}?",
                 "Esta seguro?",
@@ -47,9 +49,20 @@ namespace escrito_2
 
             if (resultado.ToString() == "Yes")
             {
-                if (!textNombreModificar.Text.Equals("") && textBox2.Text.Equals(""))
+                if (!textNombreModificar.Text.Equals("") && textApellidoModificar.Text.Equals(""))
                 {
                     PersonaControladores.ModificarNombre(id, nombre);
+                    dataGridView1.DataSource = PersonaControladores.Listar();
+                }
+                if (textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
+                {
+                    PersonaControladores.ModificarApellido(id, apellido);
+                    dataGridView1.DataSource = PersonaControladores.Listar();
+                }
+                if (!textNombreModificar.Text.Equals("") && !textApellidoModificar.Text.Equals(""))
+                {
+                    PersonaControladores.ModificarNombre(id, nombre);
+                    PersonaControladores.ModificarApellido(id, apellido);
                     dataGridView1.DataSource = PersonaControladores.Listar();
                 }
             }
@@ -78,5 +91,9 @@ namespace escrito_2
         {
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = PersonaControladores.ListarBloqueados();
+        }
     }
 }
