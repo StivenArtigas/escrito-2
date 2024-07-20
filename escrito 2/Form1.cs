@@ -23,7 +23,7 @@ namespace escrito_2
         {
             if (!textBox1.Text.Equals("") && !textBox2.Text.Equals(""))
             {
-                PersonaControladores.alta(textBox1.Text, textBox2.Text);
+                PersonaControladores.Alta(textBox1.Text, textBox2.Text);
                 textBox1.Text = "";
                 textBox2.Text = "";
                 MessageBox.Show("Se ha ingresado correctamente");
@@ -69,18 +69,23 @@ namespace escrito_2
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string id;
-            id=textborrar.Text;
-            DialogResult resultado = MessageBox.Show(
-                $"Esta seguro que quiere eliminar a la persona con el id {id}?",
-                "Esta seguro?",
-                MessageBoxButtons.YesNo);
-
-            if (resultado.ToString() == "Yes")
+            if (!textborrar.Text.Equals(""))
             {
-                PersonaControladores.Borrar(id);
-                dataGridView1.DataSource = PersonaControladores.Listar();
-                MessageBox.Show("Persona eliminada");
+                DialogResult resultado = MessageBox.Show(
+                    $"Esta seguro que quiere eliminar a la persona con el id {textborrar.Text}?",
+                    "Esta seguro?",
+                    MessageBoxButtons.YesNo);
+
+                if (resultado.ToString() == "Yes")
+                {
+                    PersonaControladores.Borrar(textborrar.Text);
+                    dataGridView1.DataSource = PersonaControladores.Listar();
+                    MessageBox.Show("Persona eliminada");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese ID a borrar");
             }
         }
         private void button1_Click_1(object sender, EventArgs e)
@@ -94,6 +99,30 @@ namespace escrito_2
         private void button2_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = PersonaControladores.ListarBloqueados();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+            string id;
+            string nombre;
+            string apellido;
+            id = textIdBuscar.Text;
+            nombre = textNombreBuscar.Text;
+            apellido = textApellidoBuscar.Text;
+            if (!textIdBuscar.Text.Equals(""))
+            {
+                dataGridView1.DataSource = PersonaControladores.BuscarID(id);
+            }
+            if (!textNombreBuscar.Text.Equals(""))
+            {
+                dataGridView1.DataSource = PersonaControladores.BuscarNombre(nombre);
+            }
+            if (!textApellidoBuscar.Text.Equals(""))
+            {
+                dataGridView1.DataSource = PersonaControladores.BuscarApellido(apellido);
+            }
+          
         }
     }
 }
