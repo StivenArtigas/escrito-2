@@ -41,3 +41,13 @@ namespace persistencia
 
     }
 }
+/*Sentencias base de datos
+create database escrito2;
+use escrito2;
+CREATE TABLE `personas` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `nombre` varchar(20) NOT NULL,
+   `apellido` varchar(20) NOT NULL,
+   `eliminado` tinyint(1) NOT NULL DEFAULT '0',
+   PRIMARY KEY (`id`)
+ )*/
